@@ -1,4 +1,159 @@
-h1 {
-    color: red;
-    background-color: black;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@100;200;300&display=swap");
+
+// font size
+$big-font: 2rem;
+$normal-font: 1.5rem;
+$little-font: 1rem;
+
+// colors
+$star-clr: #fcc900;
+$completed-clr: #32de84;
+$periority-clr: #fd5c63;
+$sort-clr: #ee82ee;
+
+//backgroun colors
+
+// theme
+$colors: (
+  "bg-clr-primary": #fff,
+  "clr-primary": #000,
+);
+// functions
+// mixins
+@mixin logo-toggle-out() {
+  margin-bottom: 30px;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  .icon {
+    cursor: pointer;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .text {
+    cursor: pointer;
+    font-size: $big-font;
+  }
+}
+@mixin logo-toggle-in() {
+  @include lists();
+  .icon {
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+@mixin take-element-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin lists(
+  $color: map-get($colors, clr-primary),
+  $background-color: map-get($colors, bg-clr-primary)
+) {
+  color: $color;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  .icon {
+    cursor: pointer;
+    box-shadow: 0px 0px 5px gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-color;
+    font-size: 2.5rem;
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    border-radius: 10px;
+  }
+  .text {
+    margin: 0 auto;
+    font-size: 1rem;
+  }
+}
+* {
+  transition: all .5s;
+  // font-family: 'Open Sans', sans-serif;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.sidebar {
+  position: relative;
+  top: 0;
+  left: 0;
+  box-shadow: 5px 0px 10px gray;
+  border-radius: 0 0 5px 0;
+  width: 300px;
+  height: 100vh;
+  background-color: map-get($colors, bg-clr-primary);
+  .toggle {
+    @include take-element-center();
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 0 50% 50% 0;
+    position: absolute;
+    top: 0vh;
+    right: -20px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: map-get($colors, bg-clr-primary);
+    box-shadow: 10px 0px 10px gray;
+    overflow: visible !important;
+    span {
+      @include take-element-center();
+    }
+  }
+  ul {
+    .logo {
+      @include logo-toggle-out();
+    }
+    li {
+      @include lists();
+      .text {
+        margin: 0 auto;
+        font-size: $little-font;
+      }
+    }
+    .starred {
+      .icon {
+        color: $star-clr;
+      }
+    }
+    .completed {
+      .icon {
+        color: $completed-clr;
+      }
+    }
+    .filter {
+      .icon {
+        color: $periority-clr;
+      }
+    }
+    .sort {
+      .icon {
+        color: $sort-clr;
+      }
+    }
+  }
 }

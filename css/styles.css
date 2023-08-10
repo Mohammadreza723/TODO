@@ -1,6 +1,111 @@
-h1 {
-  color: red;
-  background-color: black;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@100;200;300&display=swap");
+* {
+  transition: all 0.5s;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  position: relative;
+  top: 0;
+  left: 0;
+  box-shadow: 5px 0px 10px gray;
+  border-radius: 0 0 5px 0;
+  width: 300px;
+  height: 100vh;
+  background-color: #fff;
+}
+.sidebar .toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border-radius: 0 50% 50% 0;
+  position: absolute;
+  top: 0vh;
+  right: -20px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: #fff;
+  box-shadow: 10px 0px 10px gray;
+  overflow: visible !important;
+}
+.sidebar .toggle span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar ul .logo {
+  margin-bottom: 30px;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar ul .logo .icon {
+  cursor: pointer;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.sidebar ul .logo .icon img {
+  width: 100%;
+  height: 100%;
+}
+.sidebar ul .logo .text {
+  cursor: pointer;
+  font-size: 2rem;
+}
+.sidebar ul li {
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+.sidebar ul li .icon {
+  cursor: pointer;
+  box-shadow: 0px 0px 5px gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  font-size: 2.5rem;
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+  border-radius: 10px;
+}
+.sidebar ul li .text {
+  margin: 0 auto;
+  font-size: 1rem;
+}
+.sidebar ul li .text {
+  margin: 0 auto;
+  font-size: 1rem;
+}
+.sidebar ul .starred .icon {
+  color: #fcc900;
+}
+.sidebar ul .completed .icon {
+  color: #32de84;
+}
+.sidebar ul .filter .icon {
+  color: #fd5c63;
+}
+.sidebar ul .sort .icon {
+  color: #ee82ee;
 }
 
 /*# sourceMappingURL=styles.css.map */
