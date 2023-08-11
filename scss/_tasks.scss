@@ -1,0 +1,131 @@
+@mixin myFlexbox($direction) {
+    display: flex;
+    flex-direction: $direction;
+}
+// @mixin headerAndTasks() {
+//     @include myFlexbox("row");
+// }
+
+
+.container {
+    width: 75vw;
+    height: 100vh;
+    background-color: map-get($colors, bg-clr-primary );
+    display: flex;
+    flex-direction: column;
+    .header {
+        margin-bottom: 50px;
+        width: 75vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .add-task {
+            height: 45px;
+            width: 60vw;
+            margin-left: 40px;
+            margin-top: 10px;
+            input {
+                box-shadow: 0 0 20px 1px gray;
+                height: 100%;
+                width: 80%;
+                padding-left: 20px;
+                margin-right: 0;
+                border: none;
+                border-radius: 100px 0 0 100px;
+                outline: none;
+            }
+            button {
+                box-shadow: 0 0 20px 1px gray;
+                cursor: pointer;
+                border: none;
+                margin-left: -4.5px;
+                height: 45px;
+                width: 45px;
+                border-radius: 0 50% 50% 0;
+            }
+        }
+        .search-task {
+            width: 15vw;
+            margin-top: 10px;
+            margin-right: 20px;
+            input {
+                border: none;
+                background: none;
+                outline: none;
+                height: 100%;
+                border-bottom: solid 1px ;
+            }
+        }
+    }
+    .tasks {
+        .task {
+            overflow: auto;
+            &::-webkit-scrollbar {
+                width: 12px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: linear-gradient(map-get($colors, bg-clr-primary), $delete-clr);
+                border-radius: 20px;
+            }
+            
+            max-height: 100vh;
+            div {
+                cursor: pointer;
+                margin: 10px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: nowrap;
+                width: 65vw;
+                .remove-task {
+                    &:hover {
+                        transform: translateX(0px);
+                    }
+                    transform: translateX(+85px);
+                    color: map-get($colors , bg-clr-primary );
+                    background-color: $delete-clr;
+                    cursor: pointer;
+                    padding: 0px 20px;
+                    font-size: $little-font;
+                    border: none;
+                    z-index: 0;
+                }
+                span {
+                    font-weight: 10;
+                    font-size: $normal-font;
+                    z-index: 1000;
+                    width: 65vw;
+                    background-color: map-get($colors, bg-clr-primary );
+                    padding: 10px;
+                    display: flex;
+                    position: relative;
+                    box-shadow: 0 0 50px gray;
+                    p {
+
+                    }
+                }
+                .done-task {
+                    color: map-get($colors , bg-clr-primary );
+                    background-color: $done-clr;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0px 20px;
+                    font-size: $normal-font;
+                    border: none;
+                }
+                .option {
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0px 20px;
+                    font-size: $normal-font;
+                    border: none;
+                }
+                
+            }
+        }
+    }
+}

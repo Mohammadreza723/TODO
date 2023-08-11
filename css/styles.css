@@ -1,4 +1,120 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@100;200;300&display=swap");
+.container {
+  width: 75vw;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.container .header {
+  margin-bottom: 50px;
+  width: 75vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.container .header .add-task {
+  height: 45px;
+  width: 60vw;
+  margin-left: 40px;
+  margin-top: 10px;
+}
+.container .header .add-task input {
+  box-shadow: 0 0 20px 1px gray;
+  height: 100%;
+  width: 80%;
+  padding-left: 20px;
+  margin-right: 0;
+  border: none;
+  border-radius: 100px 0 0 100px;
+  outline: none;
+}
+.container .header .add-task button {
+  box-shadow: 0 0 20px 1px gray;
+  cursor: pointer;
+  border: none;
+  margin-left: -4.5px;
+  height: 45px;
+  width: 45px;
+  border-radius: 0 50% 50% 0;
+}
+.container .header .search-task {
+  width: 15vw;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+.container .header .search-task input {
+  border: none;
+  background: none;
+  outline: none;
+  height: 100%;
+  border-bottom: solid 1px;
+}
+.container .tasks .task {
+  overflow: auto;
+  max-height: 100vh;
+}
+.container .tasks .task::-webkit-scrollbar {
+  width: 12px;
+}
+.container .tasks .task::-webkit-scrollbar-thumb {
+  background: linear-gradient(#fff, #FF0000);
+  border-radius: 20px;
+}
+.container .tasks .task div {
+  cursor: pointer;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: 65vw;
+}
+.container .tasks .task div .remove-task {
+  transform: translateX(85px);
+  color: #fff;
+  background-color: #FF0000;
+  cursor: pointer;
+  padding: 0px 20px;
+  font-size: 1rem;
+  border: none;
+  z-index: 0;
+}
+.container .tasks .task div .remove-task:hover {
+  transform: translateX(0px);
+}
+.container .tasks .task div span {
+  font-weight: 10;
+  font-size: 1.5rem;
+  z-index: 1000;
+  width: 65vw;
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  position: relative;
+  box-shadow: 0 0 50px gray;
+}
+.container .tasks .task div .done-task {
+  color: #fff;
+  background-color: #17B169;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+  font-size: 1.5rem;
+  border: none;
+}
+.container .tasks .task div .option {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+  font-size: 1.5rem;
+  border: none;
+}
+
 * {
   transition: all 0.5s;
   font-family: "Poppins", sans-serif;
@@ -7,6 +123,8 @@
 }
 
 body {
+  display: flex;
+  flex-direction: row;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -16,9 +134,11 @@ body {
   position: relative;
   top: 0;
   left: 0;
+  display: flex;
+  flex-direction: column;
   box-shadow: 5px 0px 10px gray;
   border-radius: 0 0 5px 0;
-  width: 300px;
+  width: 25vw;
   height: 100vh;
   background-color: #fff;
 }

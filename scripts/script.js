@@ -4,9 +4,6 @@ let listsText = document.querySelectorAll(".sidebar ul li .text")
 let listsIcon = document.querySelectorAll(".sidebar ul li .icon")
 let logo = document.querySelector(".logo");
 let imageProfile = document.querySelector(".logo img");
-console.log(imageProfile)
-
-console.log(listsText);
 
 
 
@@ -43,7 +40,7 @@ function toggleIn(){
     `
 }
 function toggleOut(){
-    sidebar.style.width = "300px";
+    sidebar.style.width = "25vw";
     for (const list of listsText) {
         list.style.display = "block"
     }
