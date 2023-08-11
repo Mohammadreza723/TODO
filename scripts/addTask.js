@@ -10,7 +10,7 @@ text.addEventListener("focus", ()=>{
                             <div>
                                 <button class="remove-task">remove</button>
                                 <span class="paragraf">
-                                    <p>${text.value}</p>
+                                    <p><h5>${text.value}</h5></p>
                                 </span>
                                 <button class="done-task">
                                     <ion-icon name="checkmark-circle-outline"></ion-icon>

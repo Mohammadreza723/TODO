@@ -99,9 +99,11 @@
                     padding: 10px;
                     display: flex;
                     position: relative;
-                    box-shadow: 0 0 50px gray;
+                    box-shadow: 0 0 10px gray;
                     p {
+                        h5 {
 
+                        }
                     }
                 }
                 .done-task {
@@ -114,6 +116,8 @@
                     padding: 0px 20px;
                     font-size: $normal-font;
                     border: none;
+                    box-shadow: 0 0 10px gray;
+
                 }
                 .option {
                     cursor: pointer;
@@ -123,6 +127,7 @@
                     padding: 0px 20px;
                     font-size: $normal-font;
                     border: none;
+                    box-shadow: 0 0 10px gray;
                 }
                 
             }
